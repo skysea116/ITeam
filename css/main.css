@@ -1013,6 +1013,9 @@ input[type='radio']:checked {
       }
 }
 @media(max-width: 576px) {
+     .price1 br{
+          display: none;
+     }
      .modal#burger-menu .modal-content{
           width: 80%;
           left: 17%
