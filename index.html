@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="img/favicon.png">
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <script src="https://kit.fontawesome.com/fe4939064f.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="css/main.css">
+     <script src="js/bootstrap.bundle.min.js" defer></script>
+     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+     <script src="js/test.js" defer></script>
+     <script src="js/anim_on_scroll.js"></script>
+     <title>ITeam</title>
+</head>
+<body>
+     <header>
+          
+          <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+               <div class="modal-dialog modal-lg modal-dialog-centered">
+                 <div class="modal-content d-flex justify-content-center text-center">
+                    <div class="modal-header">
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                       </div>
+                    <div class="my-model-cont w-75 m-auto">
+                         <p>Перед тем, как приступить к обучению, необходимо пройти небольшой тест</p>
+                         <p>Тест состоит из 4 заданий на логическое мышление и прочие навыки, необходимые программисту. Задания не самые простые. Но ни в коем случае не выбирайте ответы наугад. Если вы не можете дать правильный ответ – выбирайте пункт «Не знаю».</p>
+                         <button class="btn m-auto mt-2 test-btn" data-bs-target="#test" data-bs-toggle="modal">Начать тест <img src="img/Arrow 1.png" alt="Стрелочка" class="ms-2"></button>
+                    </div>
+                   
+                 </div>
+               </div>
+             </div>
+
+
+             <div class="modal fade" id="test" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+               <div class="modal-dialog modal-lg modal-dialog-centered test-modal">
+                 <div class="modal-content">
+                   <div class="modal-header">
+                    <div class="d-flex justify-content-center justify-content-md-start quest-num-block">
+                         <h5 class="modal-title" id="exampleModalToggleLabel2">ЗАДАНИЕ №<span class="quest-num"></span></h5>
+                    </div>
+                     
+                     <button type="button" class="btn-close quest-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                   </div>
+                   <div class="modal-body">
+                    <p class="question">
+                        
+                    </p>
+                    <div class="row test-vars">
+                         <div class="col-12 col-md-9">
+                              <div class="form-check d-flex p-0">
+                                   <input type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                   <label class="form-check-label ms-3" for="flexRadioDefault1">
+                                       <span class="answ_1"></span>
+                                   </label>
+                              </div>
+                              <div class="form-check d-flex p-0">
+                                   <input type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                   <label class="form-check-label ms-3" for="flexRadioDefault2">
+                                       <span class="answ_2"></span>
+                                   </label>
+                              </div>
+                              <div class="form-check d-flex p-0">
+                                   <input type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                   <label class="form-check-label ms-3" for="flexRadioDefault3">
+                                        <span class="answ_3"></span>
+                                   </label>
+                              </div>
+                         </div>
+                         <div class="col-12 col-md-3 d-flex align-items-end justify-content-md-end justify-content-center mt-4 mt-lg-0">
+                              <div class="answ-btn d-flex justify-content-md-end">
+                                   <button class="btn">Ответить <i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></button>
+                              </div>
+                              <div class="answ-btn_2 d-none">
+                                   <button class="btn">Ответить <i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></button>
+                              </div>
+                              <div class="answ-btn_3 d-none">
+                                   <button class="btn">Ответить <i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></button>
+                              </div>
+                              <div class="answ-btn_4 d-none">
+                                   <button class="btn">Ответить <i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></button>
+                              </div>
+                              
+                         </div>
+                    </div>
+
+                   </div>
+                   <div class="success hide_test">
+                    
+                         <p class="success-1"></p>
+                         <p class="success-2"></p>
+
+                         <div class="next-btn d-flex justify-content-end justify-content-md-end justify-content-center mb-3 mb-md-0 mt-5 mt-md-0">
+                              <button class="btn">Далее <i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></button>
+                         </div>
+                         <div class="next-btn_2 d-flex d-none justify-content-end">
+                              <button class="btn">Далее <i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></button>
+                         </div>
+                         <div class="next-btn_3 d-flex d-none justify-content-end">
+                              <button class="btn">Далее <i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></button>
+                         </div>
+                         <div class="next-btn_4 d-flex d-none justify-content-end">
+                              <button class="btn">Далее <i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></button>
+                         </div>
+                   </div>
+                   <div class="finish hide_test d-flex flex-column justify-content-center align-items-center">
+                         <div class="score d-flex flex-column align-items-center">
+                              <i class="fa fa-thumbs-up" aria-hidden="true"></i><br>
+                              <p>НАБРАНО <span class="result-score"></span>/4</p>
+                         </div>
+                         <p class="result-text"></p>
+                         <button class="btn finish-btn-1">Начать учиться бесплатно <i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></button>
+                         <button class="btn m-auto mt-2 finish-btn-2 d-none" id="again-btn">Пройти тест заново <img src="img/Arrow 1.png" alt="Стрелочка" class="ms-2"></button>
+                         <script>
+                              $(document).ready(function(){
+                                   
+                                   $("#again-btn").click(function(){
+                                        console.log('sasas')
+                                   $("#exampleModalToggle").modal('show');
+                                   $("#test").modal('hide');
+                                   });
+                              });
+                         </script>
+                    </div>
+                 </div>
+               </div>
+             </div>
+
+
+             <div class="modal fade" id="burger-menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+               <div class="modal-dialog  modal-fullscreen">
+                 <div class="modal-content">
+                   <div class="modal-header">
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                   </div>
+                   <div class="modal-body">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="#">Чему вы научитесь </a>
+                         </li>
+                         <li class="nav-item">
+                           <a class="nav-link active" href="#">Процесс обучения</a>
+                         </li>
+                        
+                         <li class="nav-item">
+                           <a class="nav-link active" href="#">Стоимость</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link active" href="#">Контакты</a>
+                         </li>
+                         <li class="nav-item">
+                              <a class="nav-link active" href="#">Регистрация</a>
+                          </li>
+                       </ul>
+                       <button class="btn" type="submit"><i class="fa fa-arrow-right me-1" aria-hidden="true"></i> Войти</button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
+          <nav class="navbar navbar-expand-lg">
+               <div class="container nav-cont">
+                 <img src="img/logo.png" alt="Логотип" class="header_logo">
+                 <button class="btn d-block d-lg-none" type="submit"><i class="fa fa-arrow-right me-1" aria-hidden="true"></i> Войти</button>
+                 <a class="toggler" type="button" data-bs-toggle="modal" data-bs-target="#burger-menu" >
+                   <img src="img/burger-icon.png" alt="Иконка меню" class="img-fluid d-block d-lg-none">
+                 </a>
+                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                       <a class="nav-link active" aria-current="page" href="#">Чему вы научитесь </a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link active" href="#">Процесс обучения</a>
+                     </li>
+                    
+                     <li class="nav-item">
+                       <a class="nav-link active" href="#">Стоимость</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link active" href="#">Контакты</a>
+                       </li>
+                   </ul>
+                  
+                    <a href="#">Регистрация</a>
+                    <button class="btn" type="submit"><i class="fa fa-arrow-right me-1" aria-hidden="true"></i> Войти</button>
+                   
+                 </div>
+               </div>
+             </nav>
+             <!-- 
+               <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 320 1232" fill="none" class="d-block d-sm-none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M162 33.4886C171.41 33.4886 179.946 29.8857 186.204 24.0335C197.096 13.8485 208.845 0 223.757 0L320 0V1202C320 1218.57 306.569 1232 290 1232H30C13.4315 1232 0 1218.57 0 1202V0L100.243 0C115.155 0 126.904 13.8485 137.796 24.0335C144.054 29.8856 152.59 33.4886 162 33.4886Z" fill="#fff"/>
+                    </svg> -->
+     </header>
+
+    <main>
+
+     <div class="container main-cont">
+          <div class="row d-flex justify-content-center">
+               <div class="col-lg-7 col-12 main-info d-flex d-lg-block flex-column align-items-center">
+                    <p class="semibold-text">Школа <span>{</span><i>программирования</i><span>}</span> для тех, кому нужны реальные навыки,
+                    <br>а не просто сертификат</p>
+                    <div class="line"></div>
+                    <p class="regular-main-text">Пройдите тестирование, чтобы получить доступ к бесплатным вводным урокам</p>
+                    <button class="btn" type="submit" data-bs-toggle="modal" href="#exampleModalToggle">Пройти тестирование <img src="img/Arrow 1.png" alt="Стрелочка" class="ms-2"></button>
+               </div>
+               <div class="col-lg-5 col-12 d-flex justify-lg-content-end justify-content-center mt-5 mt-lg-0 top-img-cont">
+                    <img src="img/Layer 2.png" alt="Картинка-программирование" class="img-fluid">
+               </div>
+          </div>
+     </div>
+     <div class="main-cont-2 d-flex flex-column align-items-center">
+          <a href="#teches" class="w-100 d-flex justify-content-center">
+               <div class="arrow-on-svg d-flex align-items-center justify-content-center">
+                    <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </div>
+          </a>
+          <div class="svg">
+               <div class="svg-blk"></div>
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 55" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M700 49.754C718.076 49.754 733.9 40.1148 742.613 25.6964C750.326 12.934 761.842 0 776.754 0L1400 0V1332.5C1400 1376.68 1364.18 1412.5 1320 1412.5H80C35.8172 1412.5 0 1376.68 0 1332.5V0L623.246 0C638.158 0 649.674 12.934 657.387 25.6963C666.1 40.1148 681.924 49.754 700 49.754Z" fill="#fff"/>
+                   
+               </svg>
+               <div class="svg-blk"></div>
+          </div>
+          
+          <div class="under-svg">
+               <div class="container" id="teches">
+                    <h2>Какие технологии вы изучите:</h2>
+                    <div class="teches d-flex justify-content-center reveal" >
+                         <div class="row teches-row d-flex justify-content-between">
+                              <div class="col-md-12 col-lg-5 d-none d-md-flex align-items-end justify-content-md-center">
+                                   <img src="img/Group 1175.png" alt="Картинка технологий" >
+                              </div>
+                              <div class="col-lg-5 col-12  d-flex flex-column justify-content-center">
+                                   <div class="teches-list d-none d-md-flex d-lg-block">
+                                        <p>Язык программирования Python</p>
+                                        <p>Сети</p>
+                                        <p>Базы данных</p>
+                                        <p>Фреймворки Flask и Django</p>
+                                        <p>Отладка и тестирование</p>
+                                        <p>Docker</p>
+                                        <p>Git</p>
+                                   </div>
+                                   <div class="wrap-teches d-flex justify-content-center d-md-none">
+                                        <div class="teches-list d-flex justify-content-between row text-center">
+                                             <p class="col-12 me-0">Язык программирования Python</p>
+                                             <p class="col-4 me-0">Сети</p>
+                                             <p class="col-7 me-0">Базы данных</p>
+                                             <p class="col-12 me-0">Фреймворки Flask и Django</p>
+                                             <p class="col-12 me-0">Отладка и тестирование</p>
+                                             <p class="col-6 me-0">Docker</p>
+                                             <p class="col-5 me-0">Git</p>
+                                        </div>
+                                   </div>
+                                   
+                                   <div class="teches-text d-none d-lg-block">
+                                        <p>Это необходимый минимум для современного backend-разработчика</p>
+                                   </div>
+                                   
+                              </div>
+                         </div>
+                    </div>
+                    <h2>Обучение в ITeam – это<br> удобно и результативно</h2>
+
+                    <div class="prefs d-flex flex-column align-items-center reveal">
+                         <div class="row row-1 mb-lg-5 d-flex justify-content-lg-between justify-content-sm-around  justify-content-around">
+                              <div class="col-6 col-lg-3 prefs-blck">
+                                   <div class="prefs-blck-data">
+                                        <img src="img/svg-gobbler 1.png" alt="Картинка">
+                                        <h4>Огромное<br> количество практики</h4>
+                                        <p>Более 500 самостоятельных заданий и 20 полноценных больших проектов</p>
+                                   </div>
+                              </div>
+                              <div class="col-6 col-lg-3 prefs-blck">
+                                   <div class="prefs-blck-data">
+                                        <img src="img/svg-gobbler 3.png" alt="Картинка">
+                                        <h4>Современные методики обучения</h4>
+                                        <p>Спиральное обучение: 
+                                             погружаемся в материал постепенно, виток за витком</p>
+                                   </div>
+                              </div>
+                              <div class="col-6 col-lg-3 prefs-blck">
+                                   <div class="prefs-blck-data">
+                                        <img src="img/Group 1182.png" alt="Картинка">
+                                        <h4>Простое и понятное изложение</h4>
+                                        <p>Вместо заумных<br> терминов – примеры<br> из реального мира</p>
+                                   </div>
+                              </div>
+                              <div class="col-6 col-lg-3 prefs-blck">
+                                   <div class="prefs-blck-data">
+                                        <img src="img/Group 1176.png" alt="Картинка">
+                                        <h4>Гибкий график<br> занятий</h4>
+                                        <p>Учитесь в любое<br> время в удобном<br>
+                                             для вас темпе</p>
+                                   </div>
+                              </div>
+                              <div class="col-6 col-lg-3 prefs-blck d-none d-lg-flex d-xl-none">
+                                   <div class="prefs-blck-data">
+                                        <img src="img/Group 1195.png" alt="Картинка">
+                                        <h4>Прямая связь с опытными программистами</h4>
+                                        <p>Задавайте вопросы 
+                                             и отправляйте свой код на проверку</p>
+                                   </div>
+                              </div>
+                              <div class="col-6 col-lg-3 prefs-blck d-none d-lg-flex d-xl-none">
+                                   <div class="prefs-blck-data">
+                                        <img src="img/svg-gobbler (5) 1.png" alt="Картинка">
+                                        <h4>Оплата небольшими частями</h4>
+                                        <p>Платите только за тот материал, который сейчас изучаете, 
+                                             а не за весь курс сразу</p>
+                                   </div>
+                              </div>
+                              <div class="col-12 col-lg-3 prefs-blck d-none d-lg-flex d-xl-none">
+                                   <div class="prefs-blck-data row">
+                                        <div class="col-lg-12 col-3 d-flex justify-content-center align-items-center">
+                                             <img src="img/svg-gobbler (6) 1.png" alt="Картинка">
+                                        </div>
+                                        <div class="col-lg-12 col-9">
+                                             <h4>Быстрый и легкий<br> возврат</h4>
+                                             <p>Если передумаете учиться –
+                                                  вернем деньги за 3<br> рабочих дня</p>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="row row-2 d-flex d-lg-none d-xl-flex justify-content-lg-between justify-content-sm-around justify-content-around">
+                              <div class="col-6 col-lg-3 prefs-blck">
+                                   <div class="prefs-blck-data">
+                                        <img src="img/Group 1195.png" alt="Картинка">
+                                        <h4>Прямая связь с опытными программистами</h4>
+                                        <p>Задавайте вопросы 
+                                             и отправляйте свой код на проверку</p>
+                                   </div>
+                              </div>
+                              <div class="col-6 col-lg-3 prefs-blck">
+                                   <div class="prefs-blck-data">
+                                        <img src="img/svg-gobbler (5) 1.png" alt="Картинка">
+                                        <h4>Оплата небольшими частями</h4>
+                                        <p>Платите только за тот материал, который сейчас изучаете, 
+                                             а не за весь курс сразу</p>
+                                   </div>
+                              </div>
+                              <div class="col-12 col-lg-3 prefs-blck last">
+                                   <div class="prefs-blck-data row d-lg-block">
+                                        <div class="col-lg-12 col-3 d-flex justify-content-center align-items-center">
+                                             <img src="img/svg-gobbler (6) 1.png" alt="Картинка">
+                                        </div>
+                                        <div class="col-lg-12 col-9">
+                                             <h4>Быстрый и легкий<br> возврат</h4>
+                                             <p>Если передумаете учиться –
+                                                  вернем деньги за 3<br> рабочих дня</p>
+                                        </div>
+                                   </div>
+                              </div>
+                              
+                         </div>
+                    </div>
+
+                   
+
+               </div>
+          </div>
+     </div>
+     <!-- Дима -->
+
+     <div class="container">
+
+
+          <div class="bigfortextandvideo">
+              <div class="textinup">
+                  <h2 class="fortext">Как происходит обучение на ITeam?</h2>
+                  <div class="multi-line-text reveal">
+                          Обучение должно быть комфортным. Поэтому мы разработали собственную<br>
+                          платформу для обучения программированию. На ней вы можете не только изучать<br>
+                          теорию, но и запускать готовые примеры и даже писать свой собственный код.
+                  </div>
+              </div>
+          </div>
+  
+  
+  
+  
+              <div class="mt-5 forvideo reveal">
+               <a class="videos" id="play_video"><div class="videoss">
+                    <div class="secondvideo">
+                        <div class="osnovnoe">
+                            <img src="img/4 copy.png">
+                        </div>
+                    </div>
+                    <p class="toshow">Посмотреть видео</p>
+                </div>
+            </a>
+            <div id="my_video">
+     
+             </div>
+                  <img  class="photo" src="img/1 copy.png" alt="Фотография">
+                  
+                  
+              </div>
+              <script>
+
+          
+
+               $(document).ready(function() {
+                    
+                   
+              
+                    var my_video = document.getElementById("my_video");
+                    // var my_video = my_video.getElementsByTagName("iframe")[0].contentWindow;
+
+                    $("#my_video").hide();
+                
+                    $("#play_video").on("click", function() {
+                         
+                         $("#play_video").fadeOut(300);
+                         $("#my_video").html(' <iframe  src="https://www.youtube.com/embed/34Rp6KVGIEM?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>')
+                         $("#my_video").show();
+                         my_video.postMessage('{"event": "command", "func": "playVideo", "args": ""}', "*");
+                         
+                    });
+              
+                
+          
+               });
+               
+          </script>
+  
+          <div class="forthree mt-5 reveal">
+              <div class="first">
+                  <h2 class="fornumber">01</h2>
+                  <h3 class="intwo">Весь материал разбит<br> на небольшие уроки</h3>
+                  <div class="multi-line-text">
+                      Теория и практика подаются
+                      маленькими порциями. Так
+                      вам будет легче усваивать
+                      новые знания.
+                  </div>
+              </div>
+              <div class="second">
+                  <h2 class="fornumber">02</h2>
+                  <h3 class="intwo">Обучение<br> через практику</h3>
+                  <div class="multi-line-text">
+                      Всё, что вы узнали, вы тут же
+                      начинаете применять на практике.
+                      Вы сразу видите результаты
+                      своего труда.
+                  </div>
+              </div>
+              <div class="thred">
+                  <h2 class="fornumber">03</h2>
+                  <h3 class="intwo">Нет ограничений<br> по времени</h3>
+                  <div class="multi-line-text">
+                      Можно совмещать учёбу с работой
+                      и другими делами. Не нужно
+                      выпрашивать академический отпуск.
+                  </div>
+              </div>
+          </div>
+          <div class="forbatton mt-5 reveal">
+              <div class="con">
+              <button class="but">Начать обучение</button>
+              <p class="inforbatton">
+                  Попробуйте, первые уроки
+                  <br> бесплатны, но нужно пройти
+                  <br> тестирование
+              </p>
+              </div>
+          </div>
+     </div>
+          <div class="wrap-blck mt-5">
+               <div class="container">
+
+                    <div class="forallbig reveal">
+                         <div class="d-flex bd-highlight justify-content-between tr">
+                             <div class="p-2 flex-shrink-1 bd-highlight fotograf"> 
+                                 <img class="phonbox d-flex justify-content-center" src="img/3 copy.png">
+                             </div>
+                             <div class="p-2 w-50 bd-highlight tograf ">
+                                 <div class="fortrr">
+                                 <h2>Помощь и поддержка</h2>
+                                 <p>Если в процессе обучения возникнут сложности, вы всегда сможете задать вопрос своему наставнику.</p>
+                                 <p>Раз в несколько уроков вы будете получать большое задание, которое нужно будет сдавать на проверку код-ревьюеру. Он внимательно изучит ваш код, найдет ошибки и поможет вам стать лучше. </p>
+                             </div>
+                             </div>
+                         </div>
+                         <div class="d-flex bd-highlight justify-content-between mt-5 rt">
+                             <div class="p-2 w-50 bd-highlight tograf">
+                                 <div class="fortrr1">
+                                 <h2>Методика обучения</h2>
+                                 <p>Весь учебный материал структурирован по принципу «спирального обучения». Сначала вы получаете базовые знания, а затем на каждом витке спирали углубляетесь в изученные темы, доводя их понимание до совершенства. Такой подход упрощает обучение и гарантирует, что вы не пропустите ничего важного.</p>
+                             </div>
+                             </div>
+                             <div class="p-2 flex-shrink-1 bd-highlight fotograf">
+                                 <img class="phonbox d-flex justify-content-center" src="img/2 copy.png">
+                             </div>
+                           </div>
+                         </div>
+
+               </div>
+
+          </div>
+     
+          
+
+    <!-- Бойцов -->
+    <section class="price">
+     <div class="container">
+         <h2>Стоимость обучения</h2>
+         <div class="price_cont row reveal">
+             <div class="price1 col-7 flex-column flex-md-row  col-xl-4 d-flex justify-content-center align-items-center">
+                 <img src="Img/1.png" alt="">
+                 <p class="text-center text-md-start">Весь курс разбит на несколько блоков.<br>Оплата поэтапная вы платите только<br>за тот блок который сейчас проходите.</p>
+             </div>
+             <div class="price1 col-7 flex-column flex-md-row  col-xl-4 d-flex justify-content-center align-items-center mt-3 mt-xl-0">
+                 <img src="Img/2.png" alt="">
+                 <p class="text-center text-md-start">Любой из блоков вы<br>можете оплатить в<br>рассрочку.</p>
+             </div>
+             <div class="price1 col-7 flex-column flex-md-row  col-xl-4 d-flex justify-content-center align-items-center mt-3 mt-xl-0">
+                 <img src="Img/3.png" alt="">
+                 <p class="text-center text-md-start">Если передумаете учится, то возврат<br>можно оформить в любой момент.<br>Возвращаем деньги за 3 рабочих дня.</p>
+             </div>
+         </div>
+         <div class="table_cont reveal">
+             <div class="table1 table-responsive">
+                 <table class="table table-striped">
+                     <thead>
+                     <tr>
+                         <th scope="col">Блок</th>
+                         <th scope="col">Стоимость (₽)</th>
+                         <th scope="col">Расчетное время обучения (мес.) *</th>
+                     </tr>
+                     </thead>
+                     <tbody>
+                     <tr>
+                         <td>Введение в программирование</td>
+                         <td>Бесплатно</td>
+                         <td>0.5</td>
+                     </tr>
+                     <tr>
+                         <td>Основы программирования на Python</td>
+                         <td>9 900</td>
+                         <td>1</td>
+                     </tr>
+                     <tr>
+                         <td>Python, продвинутый уровень</td>
+                         <td>14 900</td>
+                         <td>2.5</td>
+                     </tr>
+                     <tr>
+                         <td>Сети + фреймворк Flask</td>
+                         <td>14 900</td>
+                         <td>2.5</td>
+                     </tr>
+                     <tr>
+                         <td>База данных</td>
+                         <td>14 900</td>
+                         <td>2</td>
+                     </tr>
+                     <tr>
+                         <td>Фреймворк Django</td>
+                         <td>14 900</td>
+                         <td>2</td>
+                     </tr>
+                     <tr>
+                         <td>Разработка «боевого» проекта</td>
+                         <td>9 900</td>
+                         <td>1.5</td>
+                     </tr>
+                     </tbody>
+                     <tfoot>
+                         <tr>
+                             <td><b>Итого</b></td>
+                             <td><b>79 400</b></td>
+                             <td><b>12</b></td>
+                         </tr>
+                     </tfoot>
+                 </table>
+             </div>
+         </div>
+         <p class="dop_p">* если занятиям уделяется 20 часов в неделю</p>
+         <div class="blok_text reveal">
+             <div class="blok_text1">
+                 <img class="block_te_img" src="Img/4.png" alt="">
+                 <p class="mt-4 mt-lg-0">Все блоки проходятся строго по порядку. Пропустить какой-то блок или<br class="n"> начать обучение с серидины нельзя, даже если вы считаете, что уже<br class="n"> знаете какую-то часть материала. Только так мы можем гарантировать,<br class="n"> что вы получите все знания, предусмотренные учебной программой.</p>
+                 <a href="#"><button type="button" class="btn btn-warning mt-4 mt-lg-0">Начать обучение ↗</button></a>
+             </div>
+         </div>
+     </div>
+ </section>
+ <div class="fo">
+     <div class="container">
+ <div class="row py-3">
+     <div class="col-12 col-lg-3  mb-3 mb-lg-0">
+          <div class="d-flex justify-content-center justify-content-lg-start align-items-center mb-4">
+               <img class="logo me-4" src="Img/logo.png" alt="Логотип">
+               <p class="text-muted mb-0">Школа<br class="nn"> программирования</p>
+          </div>
+       
+         <div class="socs mt-2 mt-mb-4 d-flex justify-content-center justify-content-lg-start">
+
+          <a href=""><i class="fa fa-instagram me-2" aria-hidden="true"></i></a>
+          <a href=""><i class="fa fa-vk me-2" aria-hidden="true"></i></a>
+          <a href=""><i class="fa fa-facebook me-2" aria-hidden="true"></i></a>
+          <a href=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+
+         </div>
+       </div>
+   
+       <div class="col d-none d-lg-block">
+   
+       </div>
+       <div class="col d-none d-lg-block">
+   
+       </div>
+       <div class="col-12 col-md-6 col-lg-3 foot-col-1 d-flex justify-content-center justify-content-lg-start text-center text-lg-start mt-3 mt-md-0">
+         <ul class="nav flex-column text-center text-lg-start">
+           <li class="nav-item mb-4 mb-md-2"><a href="#" class="nav-link p-0 text-muted">Чему вы научитесь</a></li>
+           <li class="nav-item mb-4 mb-md-2"><a href="#" class="nav-link p-0 text-muted">Процесс обучения</a></li>
+           <li class="nav-item mb-4 mb-md-2"><a href="#" class="nav-link p-0 text-muted">Стоимость</a></li>
+           <li class="nav-item mb-4 mb-md-2"><a href="#" class="nav-link p-0 text-muted">Контакты</a></li>
+           <li class="nav-item mb-4 mb-md-2"><a href="#" class="nav-link p-0 text-muted">Регистрация</a></li>
+         </ul>
+       </div>
+   
+       <div class="col-12 col-md-6 col-lg-3 foot-col-1 d-flex justify-content-center justify-content-lg-start text-center text-lg-start mt-3 mt-md-0">
+         <ul class="nav flex-column">
+           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted b">+7 (499) 348 93 86</a></li>
+           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">info@iteam.ru</a></li>
+           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"></a></li>
+           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"></a></li>
+           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted g">ИП Умаров Т.А.</a></li>
+           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted g">ИНН 745216229809</a></li>
+           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted g">ОГРНИП 315745200001358</a></li>
+         </ul>
+       </div>
+ </div>
+</div>
+</div>
+</main>
+ <div class="fot">
+ <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top container">
+     <p class="col-12 col-md-4 mb-0 text-muted text_foter">&copy; 2022 ytyt - Все права защищены</p>
+     <ul class="nav col-12 col-md-6 d-flex flex-md-row justify-content-end text_foter flex-column">
+       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted text_foter o text-center text-md-start">Пользовательское соглашение</a></li>
+       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted text_foter o text-center text-md-start">Политика конфиденциальности</a></li>
+     </ul>
+   </footer>
+ </div>
+     
+</body>
+</html>
