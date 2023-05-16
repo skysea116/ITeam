@@ -417,12 +417,13 @@
                     $("#play_video").on("click", function() {
                          
                          $("#play_video").fadeOut(300);
-                         $("#my_video").html(' <iframe  src="https://www.youtube.com/embed/34Rp6KVGIEM?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>')
+                         $("#my_video").html(' <iframe  src="https://www.youtube.com/embed/34Rp6KVGIEM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
                          $("#my_video").show();
-                         my_video.postMessage('{"event": "command", "func": "playVideo", "args": ""}', "*");
+
+                     
                          
                     });
-              
+                    
                 
           
                });
@@ -512,15 +513,15 @@
          <h2>Стоимость обучения</h2>
          <div class="price_cont row reveal">
              <div class="price1 col-7 flex-column flex-md-row  col-xl-4 d-flex justify-content-center align-items-center">
-                 <img src="Img/1l.png" alt="">
+                 <img src="img/1l.png" alt="">
                  <p class="text-center text-md-start">Весь курс разбит на несколько блоков.<br>Оплата поэтапная вы платите только<br>за тот блок который сейчас проходите.</p>
              </div>
              <div class="price1 col-7 flex-column flex-md-row  col-xl-4 d-flex justify-content-center align-items-center mt-3 mt-xl-0">
-                 <img src="Img/2l.png" alt="">
+                 <img src="img/2l.png" alt="">
                  <p class="text-center text-md-start">Любой из блоков вы<br>можете оплатить в<br>рассрочку.</p>
              </div>
              <div class="price1 col-7 flex-column flex-md-row  col-xl-4 d-flex justify-content-center align-items-center mt-3 mt-xl-0">
-                 <img src="Img/3l.png" alt="">
+                 <img src="img/3l.png" alt="">
                  <p class="text-center text-md-start">Если передумаете учится, то возврат<br>можно оформить в любой момент.<br>Возвращаем деньги за 3 рабочих дня.</p>
              </div>
          </div>
@@ -584,7 +585,7 @@
          <p class="dop_p">* если занятиям уделяется 20 часов в неделю</p>
          <div class="blok_text reveal">
              <div class="blok_text1">
-                 <img class="block_te_img" src="Img/4l.png" alt="">
+                 <img class="block_te_img" src="img/4l.png" alt="">
                  <p class="mt-4 mt-lg-0">Все блоки проходятся строго по порядку. Пропустить какой-то блок или<br class="n"> начать обучение с серидины нельзя, даже если вы считаете, что уже<br class="n"> знаете какую-то часть материала. Только так мы можем гарантировать,<br class="n"> что вы получите все знания, предусмотренные учебной программой.</p>
                  <a href="#"><button type="button" class="btn btn-warning mt-4 mt-lg-0">Начать обучение ↗</button></a>
              </div>
